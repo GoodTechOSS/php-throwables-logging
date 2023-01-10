@@ -9,6 +9,7 @@
             "email": "toby@goodcrm.co.uk"
         }
     ],
+    "prefer-stable": true,
     "require": {
         "php": "^7.3|^8.0"
     },
