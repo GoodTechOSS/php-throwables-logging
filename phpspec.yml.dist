@@ -1,0 +1,4 @@
+suites:
+    default_suite:
+        namespace: GoodTechnologies\Throwables\Logging
+        psr4_prefix: GoodTechnologies\Throwables\Logging
