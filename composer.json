@@ -11,7 +11,8 @@
     ],
     "prefer-stable": true,
     "require": {
-        "php": "^7.3|^8.0"
+        "php": "^7.3|^8.0",
+        "monolog/monolog": "^2.8"
     },
     "require-dev": {
         "codeception/codeception": "^5.0",
