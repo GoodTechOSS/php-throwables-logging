@@ -20,5 +20,9 @@
     },
     "require-dev": {
         "phpspec/phpspec": "^7.3"
+    },
+    "config": {
+        "sort-packages": true,
+        "apcu-autoloader": true
     }
 }
