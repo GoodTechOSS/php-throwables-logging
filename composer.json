@@ -20,10 +20,12 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "spec\\GoodTechnologies\\Throwables\\Logging\\": "spec/"
+            "spec\\GoodTechnologies\\Throwables\\Logging\\": "spec/",
+            "GoodTechnologies\\Throwables\\Logging\\Tests\\": "tests/"
         }
     },
     "require-dev": {
+        "codeception/codeception": "^5.0",
         "phpspec/phpspec": "^7.3"
     },
     "config": {
