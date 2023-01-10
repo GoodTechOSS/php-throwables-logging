@@ -1,10 +1,10 @@
 <?php
+declare(strict_types=1);
 
-namespace spec\GoodTechnologies\Throwables\Logging\Processor;
+namespace spec\GoodTechnologies\Throwables\Logging\Monolog\Processor;
 
-use BadFunctionCallException;
 use Error;
-use GoodTechnologies\Throwables\Logging\Processor\ThrowableProcessor;
+use GoodTechnologies\Throwables\Logging\Monolog\Processor\ThrowableProcessor;
 use LogicException;
 use PhpSpec\ObjectBehavior;
 use RuntimeException;
@@ -18,7 +18,7 @@ class ThrowableProcessorSpec extends ObjectBehavior
 
 
     /**
-     * @covers \GoodTechnologies\Throwables\Logging\Processor\ThrowableProcessor::__invoke()
+     * @covers \GoodTechnologies\Throwables\Logging\Monolog\Processor\ThrowableProcessor::__invoke()
      */
     public function it_should_not_modify_record_without_context(): void
     {
@@ -31,7 +31,7 @@ class ThrowableProcessorSpec extends ObjectBehavior
 
 
     /**
-     * @covers \GoodTechnologies\Throwables\Logging\Processor\ThrowableProcessor::__invoke()
+     * @covers \GoodTechnologies\Throwables\Logging\Monolog\Processor\ThrowableProcessor::__invoke()
      */
     public function it_should_not_modify_a_record_without_a_throwable(): void
     {
@@ -49,7 +49,7 @@ class ThrowableProcessorSpec extends ObjectBehavior
 
 
     /**
-     * @covers \GoodTechnologies\Throwables\Logging\Processor\ThrowableProcessor::__invoke()
+     * @covers \GoodTechnologies\Throwables\Logging\Monolog\Processor\ThrowableProcessor::__invoke()
      */
     public function it_should_add_throwable_details_to_context(): void
     {
@@ -75,7 +75,7 @@ class ThrowableProcessorSpec extends ObjectBehavior
 
 
     /**
-     * @covers \GoodTechnologies\Throwables\Logging\Processor\ThrowableProcessor::__invoke()
+     * @covers \GoodTechnologies\Throwables\Logging\Monolog\Processor\ThrowableProcessor::__invoke()
      */
     public function it_should_add_multidepth_throwable_details_to_context(): void
     {

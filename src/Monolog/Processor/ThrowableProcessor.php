@@ -1,6 +1,7 @@
 <?php
+declare(strict_types=1);
 
-namespace GoodTechnologies\Throwables\Logging\Processor;
+namespace GoodTechnologies\Throwables\Logging\Monolog\Processor;
 
 use Throwable;
 
