@@ -3,9 +3,10 @@ declare(strict_types=1);
 
 namespace GoodTechnologies\Throwables\Logging\Monolog\Processor;
 
+use Monolog\Processor\ProcessorInterface;
 use Throwable;
 
-class ThrowableProcessor
+class ThrowableProcessor implements ProcessorInterface
 {
     public function __invoke(array $record): array
     {

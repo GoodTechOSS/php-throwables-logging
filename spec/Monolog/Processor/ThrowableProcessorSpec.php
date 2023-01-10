@@ -6,6 +6,7 @@ namespace spec\GoodTechnologies\Throwables\Logging\Monolog\Processor;
 use Error;
 use GoodTechnologies\Throwables\Logging\Monolog\Processor\ThrowableProcessor;
 use LogicException;
+use Monolog\Processor\ProcessorInterface;
 use PhpSpec\ObjectBehavior;
 use RuntimeException;
 
@@ -14,6 +15,12 @@ class ThrowableProcessorSpec extends ObjectBehavior
     public function it_is_initializable(): void
     {
         $this->shouldHaveType(ThrowableProcessor::class);
+    }
+
+
+    public function it_should_implement_ProcessorInterface(): void
+    {
+        $this->shouldImplement(ProcessorInterface::class);
     }
 
 
