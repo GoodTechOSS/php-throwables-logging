@@ -16,5 +16,8 @@
         "psr-4": {
             "GoodTechnologies\\Throwables\\Logging\\": "src/"
         }
+    },
+    "require-dev": {
+        "phpspec/phpspec": "^7.3"
     }
 }
