@@ -85,6 +85,29 @@ class ThrowableProcessorSpec extends ObjectBehavior
     /**
      * @covers \GoodTechnologies\Throwables\Logging\Monolog\Processor\ThrowableProcessor::__invoke()
      */
+    public function it_should_remove_the_original_exception_from_context(): void
+    {
+        $runtimeException = new RuntimeException('Something went wrong!', 1);
+        $runtimeExceptionLine = __LINE__ - 1;
+
+        $record = [
+            'message' => 'Another log message.',
+            'context' => [
+                'with a' => 'throwable',
+                'exception' => $runtimeException,
+            ],
+        ];
+
+        $result = $this->__invoke($record);
+
+
+        $result['context']->shouldNotHaveKey('exception');
+    }
+
+
+    /**
+     * @covers \GoodTechnologies\Throwables\Logging\Monolog\Processor\ThrowableProcessor::__invoke()
+     */
     public function it_should_add_multidepth_throwable_details_to_context(): void
     {
         $error = new Error('Bad things happened.', 404);

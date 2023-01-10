@@ -39,6 +39,8 @@ class ThrowableProcessor implements ProcessorInterface
                 ++$i;
                 $current = $current->getPrevious();
             }
+
+            unset($record['context'][$key]);
         }
 
         return $record;
