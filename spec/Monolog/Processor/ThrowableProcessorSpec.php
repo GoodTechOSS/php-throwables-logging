@@ -73,6 +73,7 @@ class ThrowableProcessorSpec extends ObjectBehavior
 
         $result = $this->__invoke($record);
 
+        $result['context']->shouldHaveKeyWithValue('exceptionClass', RuntimeException::class);
         $result['context']->shouldHaveKeyWithValue('exceptionMessage', 'Something went wrong!');
         $result['context']->shouldHaveKeyWithValue('exceptionCode', 1);
         $result['context']->shouldHaveKeyWithValue('exceptionFile', __FILE__);
@@ -105,18 +106,21 @@ class ThrowableProcessorSpec extends ObjectBehavior
 
         $result = $this->__invoke($record);
 
+        $result['context']->shouldHaveKeyWithValue('logicExceptionClass', LogicException::class);
         $result['context']->shouldHaveKeyWithValue('logicExceptionMessage', 'Oops!');
         $result['context']->shouldHaveKeyWithValue('logicExceptionCode', 0);
         $result['context']->shouldHaveKeyWithValue('logicExceptionFile', __FILE__);
         $result['context']->shouldHaveKeyWithValue('logicExceptionLine', $logicExceptionLine);
         $result['context']->shouldHaveKey('logicExceptionTrace');
 
+        $result['context']->shouldHaveKeyWithValue('logicExceptionPrevious0Class', RuntimeException::class);
         $result['context']->shouldHaveKeyWithValue('logicExceptionPrevious0Message', 'Something went wrong!');
         $result['context']->shouldHaveKeyWithValue('logicExceptionPrevious0Code', 1);
         $result['context']->shouldHaveKeyWithValue('logicExceptionPrevious0File', __FILE__);
         $result['context']->shouldHaveKeyWithValue('logicExceptionPrevious0Line', $runtimeExceptionLine);
         $result['context']->shouldNotHaveKey('logicExceptionPrevious0Trace');
 
+        $result['context']->shouldHaveKeyWithValue('logicExceptionPrevious1Class', Error::class);
         $result['context']->shouldHaveKeyWithValue('logicExceptionPrevious1Message', 'Bad things happened.');
         $result['context']->shouldHaveKeyWithValue('logicExceptionPrevious1Code', 404);
         $result['context']->shouldHaveKeyWithValue('logicExceptionPrevious1File', __FILE__);
