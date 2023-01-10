@@ -18,6 +18,11 @@
             "GoodTechnologies\\Throwables\\Logging\\": "src/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "spec\\GoodTechnologies\\Throwables\\Logging\\": "spec/"
+        }
+    },
     "require-dev": {
         "phpspec/phpspec": "^7.3"
     },
