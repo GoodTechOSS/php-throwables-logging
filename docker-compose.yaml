@@ -1,0 +1,39 @@
+version: '3.8'
+
+x-php: &php-common
+  environment:
+    PHP_IDE_CONFIG: serverName=throwable-logging
+  volumes:
+    - .:/srv
+  tty: true
+  stdin_open: true
+  command:
+    - php
+    - -a
+
+services:
+  php73:
+    build:
+      context: .
+      target: php73
+    <<: *php-common
+  php74:
+    build:
+      context: .
+      target: php74
+    <<: *php-common
+  php80:
+    build:
+      context: .
+      target: php80
+    <<: *php-common
+  php81:
+    build:
+      context: .
+      target: php81
+    <<: *php-common
+  php82:
+    build:
+      context: .
+      target: php82
+    <<: *php-common
