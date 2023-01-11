@@ -1,10 +1,5 @@
 <?php
-
-declare(strict_types=1);
-
-namespace GoodTechnologies\Throwables\Logging\Tests\Support;
-
-use Codeception\Actor;
+namespace GoodTechnologies\Throwables\Logging\Tests;
 
 /**
  * Inherited Methods
@@ -17,11 +12,15 @@ use Codeception\Actor;
  * @method void am($role)
  * @method void lookForwardTo($achieveValue)
  * @method void comment($description)
- * @method void pause($vars = [])
+ * @method void pause()
  *
  * @SuppressWarnings(PHPMD)
- */
-class FunctionalActor extends Actor
+*/
+class FunctionalActor extends \Codeception\Actor
 {
     use _generated\FunctionalActorActions;
+
+    /**
+     * Define custom actions here
+     */
 }

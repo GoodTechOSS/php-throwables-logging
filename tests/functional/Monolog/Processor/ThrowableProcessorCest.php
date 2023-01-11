@@ -1,16 +1,12 @@
 <?php
 
-
 namespace GoodTechnologies\Throwables\Logging\Tests\Functional\Monolog\Processor;
 
 use GoodTechnologies\Throwables\Logging\Monolog\Processor\ThrowableProcessor;
-use GoodTechnologies\Throwables\Logging\Tests\Support\FunctionalActor;
+use GoodTechnologies\Throwables\Logging\Tests\FunctionalActor;
 use Monolog\Handler\TestHandler;
 use Monolog\Logger;
-use Monolog\Processor\PsrLogMessageProcessor;
 use RuntimeException;
-
-use function dump;
 
 class ThrowableProcessorCest
 {

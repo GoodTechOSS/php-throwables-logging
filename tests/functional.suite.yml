@@ -2,4 +2,5 @@ actor: FunctionalActor
 suite_namespace: GoodTechnologies\Throwables\Logging\Tests\Functional
 modules:
     enabled:
+        - \GoodTechnologies\Throwables\Logging\Tests\Helper\Functional
         - Asserts

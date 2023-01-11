@@ -27,7 +27,8 @@
     "autoload-dev": {
         "psr-4": {
             "spec\\GoodTechnologies\\Throwables\\Logging\\": "spec/",
-            "GoodTechnologies\\Throwables\\Logging\\Tests\\": "tests/"
+            "GoodTechnologies\\Throwables\\Logging\\Tests\\": "tests/Support",
+            "GoodTechnologies\\Throwables\\Logging\\Tests\\Functional\\": "tests/functional"
         }
     },
     "config": {
