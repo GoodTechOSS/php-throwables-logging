@@ -34,5 +34,11 @@
     "config": {
         "sort-packages": true,
         "apcu-autoloader": true
+    },
+    "scripts": {
+        "test": [
+            "vendor/bin/phpspec run",
+            "vendor/bin/codecept run"
+        ]
     }
 }
