@@ -11,7 +11,7 @@ use function get_class;
 
 class ThrowableProcessor implements ProcessorInterface
 {
-    public function __invoke(LogRecord $record): array
+    public function __invoke(LogRecord $record)
     {
         foreach ($record['context'] ?? [] as $key => $value) {
             if (!$value instanceof Throwable) {
