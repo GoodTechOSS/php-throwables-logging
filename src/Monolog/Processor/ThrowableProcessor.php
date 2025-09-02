@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace GoodTechnologies\Throwables\Logging\Monolog\Processor;
 
+use Monolog\LogRecord;
 use Monolog\Processor\ProcessorInterface;
 use Throwable;
 
@@ -10,7 +11,7 @@ use function get_class;
 
 class ThrowableProcessor implements ProcessorInterface
 {
-    public function __invoke(array $record): array
+    public function __invoke(LogRecord $record): array
     {
         foreach ($record['context'] ?? [] as $key => $value) {
             if (!$value instanceof Throwable) {
