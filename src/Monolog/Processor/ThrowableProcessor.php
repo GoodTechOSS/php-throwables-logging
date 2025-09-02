@@ -13,12 +13,13 @@ class ThrowableProcessor implements ProcessorInterface
 {
     public function __invoke(LogRecord $record)
     {
-        foreach ($record['context'] ?? [] as $key => $value) {
+        $context = $record->context;
+        foreach ($context ?? [] as $key => $value) {
             if (!$value instanceof Throwable) {
                 continue;
             }
 
-            $record['context'] += [
+            $context += [
                 "{$key}Class" => get_class($value),
                 "{$key}Message" => $value->getMessage(),
                 "{$key}Code" => $value->getCode(),
@@ -30,7 +31,7 @@ class ThrowableProcessor implements ProcessorInterface
             $current = $value->getPrevious();
             $i = 0;
             while ($current instanceof Throwable) {
-                $record['context'] += [
+                $context += [
                     "{$key}Previous{$i}Class" => get_class($current),
                     "{$key}Previous{$i}Message" => $current->getMessage(),
                     "{$key}Previous{$i}Code" => $current->getCode(),
@@ -41,9 +42,9 @@ class ThrowableProcessor implements ProcessorInterface
                 $current = $current->getPrevious();
             }
 
-            unset($record['context'][$key]);
+            unset($context[$key]);
         }
 
-        return $record;
+        return $record->with(context: $context);
     }
 }
